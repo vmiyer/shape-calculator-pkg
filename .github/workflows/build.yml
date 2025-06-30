@@ -29,6 +29,14 @@ jobs:
     - name: Build Python package
       run: |
         python setup.py sdist bdist_wheel # Build source distribution and wheel package
+    
+    - name: Install package for testing
+      run: |
+        pip install .
+    
+    - name: Run package tests
+      run: |
+        python test_package.py
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4 # Action to upload built files as artifacts
@@ -36,7 +44,7 @@ jobs:
         name: python-package-build
         path: dist/ # The 'dist' directory contains the built .tar.gz and .whl files
 
-    - name: Display built artifacts (Optional)
+    - name: Display built artifacts
       run: |
         echo "Built artifacts in dist/:"
         ls -l dist/

@@ -3,11 +3,9 @@ import math
 class Shape:
     """Base class for all shapes."""
     def area(self):
-        """Calculates the area of the shape."""
         raise NotImplementedError("Subclasses must implement 'area' method.")
 
     def perimeter(self):
-        """Calculates the perimeter of the shape."""
         raise NotImplementedError("Subclasses must implement 'perimeter' method.")
 
     def get_type(self):
@@ -22,11 +20,9 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
-        """Calculates the area of the circle."""
         return math.pi * self.radius**2
 
     def perimeter(self):
-        """Calculates the circumference (perimeter) of the circle."""
         return 2 * math.pi * self.radius
 
     def __str__(self):
@@ -41,11 +37,9 @@ class Rectangle(Shape):
         self.height = height
 
     def area(self):
-        """Calculates the area of the rectangle."""
         return self.width * self.height
 
     def perimeter(self):
-        """Calculates the perimeter of the rectangle."""
         return 2 * (self.width + self.height)
 
     def __str__(self):
